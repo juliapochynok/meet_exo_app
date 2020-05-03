@@ -1,0 +1,23 @@
+
+.Footer1 {
+    position: relative;
+    bottom: 0;
+    height: 10vh;
+    width: 99vw;
+    align-items: center;
+    background-color: transparent;
+    transition: 0.3s;
+    margin-top: 5%;
+  }
+  
+
+.SNSPic {
+  width:3%;
+
+}
+
+.SNS {
+  margin-left: 2%;
+  margin-right: 2%;
+}
+
