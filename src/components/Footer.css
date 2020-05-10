@@ -1,6 +1,7 @@
 
 .Footer1 {
     position: relative;
+    /* position: fixed; */
     bottom: 0;
     height: 10vh;
     width: 99vw;
