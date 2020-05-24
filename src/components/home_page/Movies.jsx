@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom';
-import { Jumbotron, Container, Row, Col, Image, Button, Carousel } from 'react-bootstrap';
+import {  Carousel } from 'react-bootstrap';
 import ReactPlayer from "react-player";
 import './Movies.css';
 

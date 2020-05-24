@@ -14,7 +14,7 @@ export default class MainCarousel extends Component {
             <img
               className="d-block"
               src="assets/exo_main.jpg"
-              alt="Third slide"
+              alt="First slide"
             />
 
             <Carousel.Caption>
@@ -28,7 +28,7 @@ export default class MainCarousel extends Component {
             <img
               className="d-block1"
               src="assets/exo_back.jpg"
-              alt="First slide"
+              alt="Second slide"
             />
             <Carousel.Caption>
               <h1 className="SlideTitle Slide2">INTRODUCTION TO EXO</h1>
@@ -54,7 +54,7 @@ export default class MainCarousel extends Component {
             <img
               className="d-block"
               src="assets/exo_dream.jpg"
-              alt="Third slide"
+              alt="Fourth slide"
             />
             <Carousel.Caption>
               <h1 className="SlideTitle Slide4">TESTS</h1>

@@ -1,9 +1,7 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom';
-import { Jumbotron, Container, Row, Col, Image, Button } from 'react-bootstrap';
 import './TestsPage.css';
-import Navigator from './Navigator';
-import Footer from './Footer';
+import Navigator from '../general/Navigator';
+import Footer from '../general/Footer';
 import Tests from './Tests';
 
 

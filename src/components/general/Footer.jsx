@@ -12,9 +12,6 @@ export default class Footer extends Component {
             <a href="http://exo.smtown.com/" className="SNS"><img className="SNSPic" src="assets/logo.png" alt="exo-logo" /></a>
             <a href="https://www.smtown.com/" className="SNS"><img className="SNSPic" src="assets/SM.png" alt="sm-logo" /></a>
          </div>
-
-
-        
         )
     }
 }
