@@ -1,6 +1,4 @@
 import React, { Component,  Fragment } from 'react'
-// import { Link } from 'react-router-dom';
-import { Jumbotron, Container, Row, Col, Image, Button } from 'react-bootstrap';
 import './Tests.css';
 import Answer from "./Answers";
 

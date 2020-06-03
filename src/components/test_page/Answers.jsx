@@ -12,11 +12,9 @@ export default class Tests extends Component {
 
     // Event on button
     onAnswer = () => {
-    
         this.setState({ 
         click:false
         });
-    
     };
   
   render() {

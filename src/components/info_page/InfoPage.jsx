@@ -1,9 +1,7 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom';
-import { Jumbotron, Container, Row, Col, Image, Button } from 'react-bootstrap';
 import './InfoPage.css';
-import Navigator from './Navigator';
-import Footer from './Footer';
+import Navigator from '../general/Navigator';
+import Footer from '../general/Footer';
 
 
 let info = "EXO (Korean: 엑소) is a South Korean–Chinese boy band based in Seoul, with nine members. The band was formed by SM Entertainment in 2011 and debuted in 2012. Their music incorporates genres like pop, hip-hop, and R&B, alongside electronic dance music genres like house, trap, and synth-pop. EXO releases and performs music in Korean, Mandarin, and Japanese. The band ranked as one of the top five most influential celebrities on the Forbes Korea Power Celebrity list each year from 2014 to 2018, and have been named 'the biggest boy band in the world' and the 'kings of K-pop' by media outlets." 
@@ -13,17 +11,17 @@ export default class InfoPage extends Component {
     render() {
         return (
         <div className='InfoPage'>
-         <video className="video1" loop autoPlay>
+            <video className="video1" loop autoPlay>
                 <source src='assets/videoplayback.mp4' type="video/mp4" />
                 Your browser does not support the video tag.
             </video>
             <Navigator />
             <h1 className="WHO">who is EXO?</h1>
             <div >
-            <h1 className="introEXO">{info}</h1>
+                <h1 className="introEXO">{info}</h1>
             </div>
             <Footer />
-          </div>
+        </div>
         )
     }
 }
