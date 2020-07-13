@@ -1,20 +1,29 @@
 import React, { Component } from 'react'
 import emailjs from 'emailjs-com'
-import { Button, Form, FormGroup, Label, Input } from 'reactstrap'
+import { Button, FormFeedback, Form, FormGroup, Label, Input } from 'reactstrap'
 import './Form.css';
+import { connect } from "react-redux";
+import { func } from 'prop-types';
 
 
-export default class Form1 extends Component {
-  state = {
-    name: '',
-    email: '',
-    subject: '',
-    message: '',
-  }
+class Form1 extends Component {
+  // state = {
+  //   name: '',
+  //   email: '',
+  //   subject: '',
+  //   message: '',
+  // }
 
   handleSubmit(e) {
     e.preventDefault()
-    const { name, email, subject, message } = this.state
+    const name = this.props.name;
+    const email = this.props.email;
+    const message = this.props.message;
+    const subject = this.props.subject;
+
+    console.log(this.props.name)
+    console.log(this.props.email)
+    console.log(message)
     let fullMail = {
       from_email: email,
       from_name: name,
@@ -34,17 +43,32 @@ export default class Form1 extends Component {
   }  
 
   resetForm() {
-    this.setState({
-      name: '',
-      email: '',
-      subject: '',
-      message: '',
-    })
+    // this.setState({
+    //   name: '',
+    //   email: '',
+    //   subject: '',
+    //   message: '',
+    // })
+    this.props.dispatch({ type: "RESET"});
   }
 
-  handleChange = (param, e) => {
-      this.setState({ [param]: e.target.value })
+  handleChangeName = (param, e) => {
+    this.props.dispatch({ type: "NAME", arg: e.target.value});
     }
+
+  handleChangeEmail(param, e) {
+    this.props.dispatch({ type: "EMAIL", arg: e.target.value});
+    }
+
+  handleChangeSubject = (param, e) => {
+    this.props.dispatch({ type: "SUBJECT", arg: e.target.value});
+    }
+
+  handleChangeMess = (param, e) => {
+    this.props.dispatch({ type: "MESS", arg: e.target.value});
+    }
+
+
 
   render() {
     return (
@@ -58,11 +82,11 @@ export default class Form1 extends Component {
             <FormGroup controlId="Email">
               {/* <Label className="text-muted">Your email address</Label> */}
               <Input
-                type="email"
+                type="text"
                 name="email"
-                value={this.state.email}
+                value={this.props.email}
                 className="text"
-                onChange={this.handleChange.bind(this, 'email')}
+                onChange={this.handleChangeEmail.bind(this, "email")}
                 placeholder="Enter email"
               />
             </FormGroup>
@@ -72,9 +96,9 @@ export default class Form1 extends Component {
               <Input
                 type="text"
                 name="name"
-                value={this.state.name}
+                value={this.props.name}
                 className="text"
-                onChange={this.handleChange.bind(this, 'name')}
+                onChange={this.handleChangeName.bind(this, 'name')}
                 placeholder="Enter full name"
               />
             </FormGroup>
@@ -85,8 +109,8 @@ export default class Form1 extends Component {
                 type="text"
                 name="subject"
                 className="text"
-                value={this.state.subject}
-                onChange={this.handleChange.bind(this, 'subject')}
+                value={this.props.subject}
+                onChange={this.handleChangeSubject.bind(this, "subject")}
                 placeholder="Enter subject"
               />
             </FormGroup>
@@ -97,8 +121,8 @@ export default class Form1 extends Component {
                 type="textarea"
                 name="message"
                 className="text"
-                value={this.state.message}
-                onChange={this.handleChange.bind(this, 'message')}
+                value={this.props.message}
+                onChange={this.handleChangeMess.bind(this, "message")}
                 placeholder="Enter message"
               />
             </FormGroup>
@@ -117,3 +141,15 @@ export default class Form1 extends Component {
     )
   }
 }
+
+
+const mapStateToProps = state => {
+  return {
+  name: state.name,
+  email: state.email,
+  subject: state.subject,
+  message: state.message,
+  };
+}
+
+export default connect( mapStateToProps)(Form1); 
