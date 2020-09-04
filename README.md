@@ -1,5 +1,4 @@
 # MEET EXO Web Application
- To visite the website go to juliapochynok.github.io
 
 --------------------------------------------------------------------------------------------
 
